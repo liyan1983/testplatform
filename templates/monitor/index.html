@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block stytle %}
+    <link rel="stylesheet" href="/static/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css">
+{% endblock %}
+{% block script %}
+    <!-- 引入js文件，需要在base.html留入口，不然渲染会出问题。 -->
+    <script src="/static/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="/static/js/monitor.js"></script>
+{% endblock %}
+{% block content %}
+    <div class="row">
+        <div class="col-sm-12 col-md-5 col-lg-5">
+            <div class="input-group input-daterange ">
+                <input id="start" type="text" class="form-control" data-provide="datetimepicker">
+                <div class="input-group-addon">to</div>
+                <input id="end" type="text" class="form-control" data-provide="datetimepicker">
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-5 col-lg-5">
+            <select id="ip"></select>
+        </div>
+        <input id="search" type="button" value="检索">
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-md-6 col-lg-6">
+            <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+            <div id="cpu" style="width: 600px;height:400px;"></div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-6">
+            <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+            <div id="memory" style="width: 600px;height:400px;"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-md-6 col-lg-6">
+            <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+            <div id="disk" style="width: 600px;height:400px;"></div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-6">
+            <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+            <div id="network" style="width: 600px;height:400px;"></div>
+        </div>
+    </div>
+{% endblock %}
